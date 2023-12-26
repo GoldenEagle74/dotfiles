@@ -1,0 +1,67 @@
+* {
+	border-radius: 10;
+	border: none;
+	font-family: JetBrainsMono-Bold, Symbols Nerd Font;
+	font-weight: normal;
+	font-size: 13px;
+	padding: 0 0px;
+	margin: 0 0px;
+	background-color: @bg;
+}
+
+@define-color bg #272a34;
+@define-color fg #f9f9f9;
+@define-color gr #545d70;
+@define-color red #ff0066;
+@define-color green #aaffaa;
+@define-color blue #51a2da;
+
+
+#workspaces button {
+	padding: 0px;
+	margin: 0px 10px;
+	color: @gr;
+}
+#workspaces button:hover {
+	color: @fg;
+}
+#workspaces button.active {
+	color: @fg;
+}
+#workspaces button.urgent {
+	color: @red;
+}
+
+
+#cpu,
+#memory,
+#window,
+#custom-media,
+#custom-cmus,
+#custom-weather,
+#tray,
+#language,
+#pulseaudio,
+#clock {
+	padding: 0 10px;
+	margin: 5 6px;
+	color: @fg;
+}
+
+#custom-menu {
+	background-color: @fg;
+	color: @blue;
+	padding: 2 5px;
+	margin: 7 10px;
+	border-radius: 20;
+}
+
+#custom-sep {
+	background-color: @bg;
+	color: @bg;
+	margin: 0px 5px;
+}
+
+#window {
+	font-weight: bold;
+}
