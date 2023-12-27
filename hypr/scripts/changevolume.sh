@@ -32,14 +32,15 @@ send_volume_notification() {
 }
 
 # Функция для отправки уведомления о муте микрофона
-send_mute_microphone_notification() {
-    microphone_name=$(get_microphone_name)
+send_microphone_notification() {
     mute_status=$(pamixer --source "$microphone_name" --get-mute)
+    current_microphone_volume=$(pamixer --source "$microphone_name" --get-volume-human | sed 's/[^0-9]*//g')
 
     if [[ $mute_status == "true" ]]; then
         dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag " Microphone muted"
     else
-        dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag " Microphone unmuted"
+        dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag \
+        -h int:value:"$current_microphone_volume" -t $notification_timeout " Microphone: ${current_microphone_volume}%"
     fi
 }
 
@@ -66,12 +67,20 @@ while getopts ":o:i:" opt; do
                     ;;
             esac
             ;;
-        i)
+        i)  
+            microphone_name=$(get_microphone_name)
             case $OPTARG in
                 m)
-                    microphone_name=$(get_microphone_name)
                     pamixer --source "$microphone_name" --toggle-mute
-                    send_mute_microphone_notification
+                    send_microphone_notification
+                    ;;
+                d)
+                    pamixer --source "$microphone_name" --decrease $volume_step
+                    send_microphone_notification
+                    ;;
+                i)
+                    pamixer --source "$microphone_name" --increase $volume_step
+                    send_microphone_notification
                     ;;
                 *)
                     echo "Invalid option argument for -i"
