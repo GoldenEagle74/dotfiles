@@ -115,19 +115,12 @@ tooltip {
     padding-left: 3px;
 }
 
-#custom-sl_end,
-#custom-sr_end,
-#custom-rl_end,
-#custom-rr_end {
-    border-radius: 0;
-}
-
 #custom-menu {
 	background-color: @main-bg;
 	color: @blue;
     font-size: 18px;
 	padding: 4 5px;
-	margin: 7 10px;
+	margin: 4px 0;
 	border-radius: 20px;
 }
 
@@ -139,8 +132,9 @@ tooltip {
 }
 
 #window {
+    background-color: transparent;
     font-weight: bold;
-    border-radius: 22px;
+    /* border-radius: 22px; */
     margin: 5px 9px 5px 9px;
     padding: 0 12px;
 }
