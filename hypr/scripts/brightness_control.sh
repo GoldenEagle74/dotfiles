@@ -11,7 +11,8 @@ get_brightness() {
 # Функция для отправки уведомления о яркости
 send_brightness_notification() {
     current_brightness=$(get_brightness)
-    dunstify -a "changeBrightness" -u low -h string:x-dunst-stack-tag:brightness " Brightness: ${current_brightness}%"
+    dunstify -a "changeBrightness" -u low -h string:x-dunst-stack-tag:brightness \
+    -h int:value:"$current_brightness" -t $notification_timeout " Brightness: ${current_brightness}%"
 }
 
 # Обработка параметров
