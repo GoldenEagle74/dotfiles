@@ -70,7 +70,7 @@
 
     "clock": {
         "format":"{: %R}",
-        "format-alt": "{:%R 󰃭 %d·%m·%y}",
+        "format-alt": "{: %R 󰃭 %d·%m·%y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
