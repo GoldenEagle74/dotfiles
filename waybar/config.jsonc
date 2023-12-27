@@ -18,7 +18,7 @@
 
 	"modules-left": ["custom/padd","custom/menu","custom/rl_end","cpu","memory","custom/rr_end","custom/l_end","hyprland/window","custom/r_end"],
 	"modules-center": ["custom/l_end","hyprland/workspaces","custom/r_end"],
-	"modules-right": ["custom/playerctl", "custom/playerlabel","custom/l_end","tray","custom/r_end","custom/l_end","pulseaudio","pulseaudio#microphone","custom/sep","battery","custom/sep","hyprland/language","custom/sep","idle_inhibitors","clock","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/playerctl", "custom/playerlabel","custom/l_end","tray","custom/r_end","custom/l_end","pulseaudio","custom/sep","pulseaudio#microphone","custom/sep","battery","custom/sep","hyprland/language","custom/sep","idle_inhibitors","clock","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
