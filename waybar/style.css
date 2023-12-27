@@ -139,14 +139,18 @@ tooltip {
 }
 
 #window {
-	font-weight: bold;
+    font-weight: bold;
+    border-radius: 22px;
+    margin: 5px 9px 5px 9px;
+    padding: 0 12px;
 }
+
 
 #custom-playerctl, #custom-playerlabel {
     background: @main-bg;
     border-radius: 16px;
-    border-left: solid 1px #282738;
-    border-right: solid 1px #282738;
+    /* border-left: solid 1px #282738;
+    border-right: solid 1px #282738; */
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: normal;
