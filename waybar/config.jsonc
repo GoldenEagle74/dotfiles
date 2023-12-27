@@ -16,9 +16,9 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/padd","custom/menu","custom/rl_end","cpu","memory","custom/rr_end","custom/l_end","hyprland/window","custom/r_end"],
+	"modules-left": ["custom/padd","custom/menu","custom/l_end","hyprland/window","custom/r_end","custom/playerctl", "custom/playerlabel"],
 	"modules-center": ["custom/l_end","hyprland/workspaces","custom/r_end"],
-	"modules-right": ["custom/playerctl", "custom/playerlabel","custom/l_end","tray","custom/r_end","custom/l_end","pulseaudio","custom/sep","pulseaudio#microphone","custom/sep","battery","custom/sep","hyprland/language","custom/sep","idle_inhibitors","clock","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/l_end","tray","custom/r_end","custom/l_end","pulseaudio","custom/sep","pulseaudio#microphone","custom/sep","battery","custom/sep","hyprland/language","custom/sep","idle_inhibitors","clock","custom/r_end","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
@@ -39,16 +39,6 @@
        }
 },
 
-    "custom/wbar": {
-        "format": "{}", //    //
-        "exec": "echo ; echo  switch menubar //  dock",
-        "on-click": "~/.config/hypr/scripts/wbarconfgen.sh n",
-        "on-click-right": "~/.config/hypr/scripts/wbarconfgen.sh p",
-        "on-click-middle": "sleep 0.1 && ~/.config/hypr/scripts/quickapps.sh kitty firefox spotify code dolphin",
-        "interval" : 86400,
-        "tooltip": true
-    },
-
     "custom/spotify": {
         "exec": "/usr/bin/python3 ~/.config/waybar/modules/mediaplayer.py --player spotify",
         "format": " {}",
@@ -64,7 +54,7 @@
 
     "hyprland/window": {
         "format": "{title}",
-        "separate-outputs": false,
+        "paddarate-outputs": false,
         "rewrite": {
             "(.*) — Konsole": "$1 ",
             "(.*) — Mozilla Firefox": "$1 󰈹",
@@ -87,6 +77,7 @@
     },
 
     "clock": {
+        "format":"{: %R}",
         "format-alt": "{:%R 󰃭 %d·%m·%y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
@@ -275,6 +266,12 @@
         "tooltip": false
     },
 
+    "custom/sep": {
+        "format": "  ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
     "custom/menu": {
 		"format": "{icon}",
 		"format-icons": "  ",
@@ -282,26 +279,6 @@
 		"escape": true,
 		"tooltip": false
 	},
-
-    "custom/cmus": {
-        "format": "{icon}    {}",
-        "format-icons": {
-            "default": [""]
-            },
-        "max-length": 45,
-        "interval": 1,
-        "exec": "cmus-remote -C \"format_print '%F'\"",
-        "exec-if": "pgrep cmus",
-        "on-click": "cmus-remote -u",
-        "on-scroll-up": "cmus-remote --next",
-        "on-scroll-down": "cmus-remote --prev",
-        "escape": true,
-        "tooltip": false
-        },
-
-    "custom/sep": {
-        "format": "_",
-    },
 
     "custom/playerctl": {
         "format": "{icon}",
