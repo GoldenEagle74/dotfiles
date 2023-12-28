@@ -45,7 +45,7 @@ send_microphone_notification() {
 }
 
 # Обработка параметров
-while getopts ":o:i:" opt; do
+while getopts ":o:i:v:" opt; do
     case $opt in
         o)
             case $OPTARG in
@@ -88,6 +88,9 @@ while getopts ":o:i:" opt; do
                     ;;
             esac
             ;;
+        v)
+            volume_step=$OPTARG
+            ;;
         \?)
             echo "Invalid option: -$OPTARG"
             exit 1
@@ -98,3 +101,4 @@ while getopts ":o:i:" opt; do
             ;;
     esac
 done
+
