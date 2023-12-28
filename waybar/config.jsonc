@@ -141,8 +141,8 @@
         "format-muted": "婢",
         "on-click": "pavucontrol -t 3",
         "on-click-middle": "~/.config/hypr/scripts/changevolume.sh -o m",
-        "on-scroll-up": "~/.config/hypr/scripts/changevolume.sh -o i",
-        "on-scroll-down": "~/.config/hypr/scripts/changevolume.sh -o d",
+        "on-scroll-up": "~/.config/hypr/scripts/changevolume.sh -v 1 -o i",
+        "on-scroll-down": "~/.config/hypr/scripts/changevolume.sh -v 1 -o d",
         "tooltip-format": "{icon} {desc} // {volume}%",
         "scroll-step": 5,
         "format-icons": {
@@ -162,8 +162,8 @@
         "format-source-muted": "",
         "on-click": "pavucontrol -t 4",
         "on-click-middle": "~/.config/hypr/scripts/changevolume.sh -i m",
-        "on-scroll-up": "~/.config/hypr/scripts/changevolume.sh -i i",
-        "on-scroll-down": "~/.config/hypr/scripts/changevolume.sh -i d",
+        "on-scroll-up": "~/.config/hypr/scripts/changevolume.sh -v 1 -i i",
+        "on-scroll-down": "~/.config/hypr/scripts/changevolume.sh -v 1 -i d",
         "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
         "scroll-step": 5
     },
