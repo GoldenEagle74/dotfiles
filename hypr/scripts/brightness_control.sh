@@ -5,7 +5,7 @@ notification_timeout=1000
 
 # Функция для получения текущего уровня яркости
 get_brightness() {
-    light -G | awk '{print int($1)}'
+    brightnessctl -m | awk -F ',' '/backlight/ {print $4}' | tr -d '%'
 }
 
 # Функция для отправки уведомления о яркости
@@ -16,15 +16,18 @@ send_brightness_notification() {
 }
 
 # Обработка параметров
-while getopts ":di" opt; do
+while getopts ":div:" opt; do
     case $opt in
         d)
-            light -U $brightness_step
+            brightnessctl -q s "${brightness_step}%-"
             send_brightness_notification
             ;;
         i)
-            light -A $brightness_step
+            brightnessctl -q s "${brightness_step}%+"
             send_brightness_notification
+            ;;
+	v)
+            brightness_step=$OPTARG
             ;;
         \?)
             echo "Invalid option: -$OPTARG"
@@ -36,3 +39,4 @@ while getopts ":di" opt; do
             ;;
     esac
 done
+
