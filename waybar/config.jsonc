@@ -18,7 +18,7 @@
 
 	"modules-left": ["custom/padd","custom/menu","hyprland/window","custom/playerctl", "custom/playerlabel"],
 	"modules-center": ["custom/l_end","hyprland/workspaces","custom/r_end"],
-	"modules-right": ["cava","custom/padd","custom/l_end","tray","custom/r_end","custom/l_end","pulseaudio","custom/sep","pulseaudio#microphone","custom/sep","battery","custom/sep","hyprland/language","custom/sep","idle_inhibitors","clock","custom/r_end","custom/l_end","custom/power","custom/r_end"],
+	"modules-right": ["cava","custom/padd","custom/l_end","tray","custom/r_end","custom/l_end","pulseaudio","custom/sep","pulseaudio#microphone","backlight","battery","custom/sep","hyprland/language","custom/sep","clock","custom/r_end","custom/l_end","custom/power","custom/r_end"],
 
 
 // sourced from modules based on config.ctl //
@@ -169,11 +169,11 @@
     },
 
     "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
+        "device": "amdgpu_bl1",
+        "format": "{icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
+        "on-scroll-up": "~/.config/hypr/scripts/brightness_control.sh -v 1 -i",
+        "on-scroll-down": "~/.config/hypr/scripts/brightness_control.sh -v 1 -d",
         "min-length": 6
     },
 
